@@ -1,0 +1,17 @@
+name: build and pubish to docker registry 
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  check-os:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Code Checkout
+          uses: actions/checkout@v4.2.2
+      - name: Build Docker Image
+        run: | 
+          docker build -t app:v1 .
+          docker tag app:v1 mcsolkeens/app_dev
