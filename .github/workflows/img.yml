@@ -7,10 +7,10 @@ on:
 
 jobs:
     runs-on: ubuntu-latest
-    steps:
+       steps:
         - name: Code Checkout
           uses: actions/checkout@v4.2.2
-      - name: Build Docker Image
-        run: | 
-          docker build -t app:v1 .
-          docker tag app:v1 mcsolkeens/app_dev
+        - name: Build Docker Image
+          run: | 
+             docker build -t app:v1 .
+             docker tag app:v1 mcsolkeens/app_dev
